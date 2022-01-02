@@ -1,0 +1,58 @@
+[28-Jul-2021 06:28:46 UTC] PHP Warning:  Creating default object from empty value in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php on line 21
+[28-Jul-2021 06:55:06 UTC] PHP Warning:  Creating default object from empty value in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php on line 21
+[28-Jul-2021 07:00:00 UTC] PHP Warning:  Creating default object from empty value in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php on line 21
+[28-Jul-2021 07:03:07 UTC] PHP Warning:  Creating default object from empty value in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php on line 21
+[28-Jul-2021 07:04:27 UTC] PHP Fatal error:  Uncaught Error: Class 'DB' not found in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step3.php:13
+Stack trace:
+#0 {main}
+  thrown in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step3.php on line 13
+[28-Jul-2021 08:36:09 UTC] PHP Warning:  Creating default object from empty value in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php on line 21
+[28-Jul-2021 08:36:56 UTC] PHP Warning:  Creating default object from empty value in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php on line 21
+[28-Jul-2021 08:37:26 UTC] PHP Warning:  Creating default object from empty value in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php on line 21
+[28-Jul-2021 08:38:41 UTC] PHP Warning:  Creating default object from empty value in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php on line 21
+[28-Jul-2021 08:39:24 UTC] PHP Warning:  Creating default object from empty value in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php on line 21
+[28-Jul-2021 08:40:39 UTC] PHP Warning:  Creating default object from empty value in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php on line 21
+[28-Jul-2021 08:42:51 UTC] PHP Warning:  Creating default object from empty value in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php on line 21
+[28-Jul-2021 08:43:35 UTC] PHP Warning:  Creating default object from empty value in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php on line 21
+[28-Jul-2021 08:43:50 UTC] PHP Warning:  Creating default object from empty value in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php on line 21
+[28-Jul-2021 08:45:51 UTC] PHP Warning:  Creating default object from empty value in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php on line 21
+[28-Jul-2021 08:46:42 UTC] PHP Warning:  Creating default object from empty value in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php on line 21
+[28-Jul-2021 08:46:42 UTC] PHP Fatal error:  Uncaught TypeError: PDO::__construct() expects parameter 4 to be array, string given in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php:25
+Stack trace:
+#0 /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php(25): PDO->__construct('mysql:host=127....', 'shafqatcenterdb...', 'd)xA$kV=hd8*', '3306')
+#1 {main}
+  thrown in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php on line 25
+[28-Jul-2021 08:48:15 UTC] PHP Warning:  Creating default object from empty value in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php on line 21
+[28-Jul-2021 08:48:15 UTC] PHP Fatal error:  Uncaught TypeError: PDO::__construct() expects parameter 4 to be array, string given in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php:25
+Stack trace:
+#0 /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php(25): PDO->__construct('mysql:host=127....', 'shafqatcenterdb...', 'd)xA$kV=hd8*', '3306')
+#1 {main}
+  thrown in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php on line 25
+[28-Jul-2021 08:49:55 UTC] PHP Warning:  Creating default object from empty value in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php on line 21
+[28-Jul-2021 08:49:55 UTC] PHP Fatal error:  Uncaught TypeError: PDO::__construct() expects parameter 4 to be array, string given in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php:25
+Stack trace:
+#0 /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php(25): PDO->__construct('mysql:host=127....', 'shafqatcenterdb...', 'd)xA$kV=hd8*', '3306')
+#1 {main}
+  thrown in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php on line 25
+[28-Jul-2021 08:50:26 UTC] PHP Warning:  Creating default object from empty value in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php on line 21
+[28-Jul-2021 08:50:26 UTC] PHP Fatal error:  Uncaught TypeError: PDO::__construct() expects parameter 4 to be array, string given in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php:25
+Stack trace:
+#0 /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php(25): PDO->__construct('mysql:host=127....', 'shafqatcenterdb...', 'b9Ayc3@LJ7E#7a', '3306')
+#1 {main}
+  thrown in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php on line 25
+[28-Jul-2021 08:54:34 UTC] PHP Fatal error:  Uncaught TypeError: PDO::__construct() expects parameter 4 to be array, string given in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php:29
+Stack trace:
+#0 /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php(29): PDO->__construct('mysql:host=127....', 'shafqatcenterdb...', 'b9Ayc3@LJ7E#7a', '3306')
+#1 {main}
+  thrown in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php on line 29
+[28-Jul-2021 08:58:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function var_dum() in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php:58
+Stack trace:
+#0 {main}
+  thrown in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php on line 58
+[28-Jul-2021 08:58:10 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function var_dum() in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php:58
+Stack trace:
+#0 {main}
+  thrown in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php on line 58
+[28-Jul-2021 08:59:47 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php on line 110
+[28-Jul-2021 08:59:51 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php on line 110
+[28-Jul-2021 09:00:30 UTC] PHP Fatal error:  Cannot use try without catch or finally in /home/upro3wwagn1v/public_html/shafqatcenter.anysolutions.net/shafqatcenter/install/step4.php on line 28
