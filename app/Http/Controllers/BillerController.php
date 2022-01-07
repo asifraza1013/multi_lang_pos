@@ -69,7 +69,7 @@ class BillerController extends Controller
                     $constraints->aspectRatio();
                 })->save('images/biller/' . $imageName.'-resize.'.$ext);*/
             $imageName = $imageName . '.' . $ext;
-            $image->move('images/biller', $imageName);
+            $image->move('public/images/biller', $imageName);
             
             $lims_biller_data['image'] = $imageName;
         }
@@ -124,7 +124,7 @@ class BillerController extends Controller
             $ext = pathinfo($image->getClientOriginalName(), PATHINFO_EXTENSION);
             $imageName = preg_replace('/[^a-zA-Z0-9]/', '', $request['company_name']);
             $imageName = $imageName . '.' . $ext;
-            $image->move('images/biller', $imageName);
+            $image->move('public/images/biller', $imageName);
             $input['image'] = $imageName;
         }
 

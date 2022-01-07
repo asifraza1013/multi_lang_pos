@@ -141,7 +141,7 @@ class CategoryController extends Controller
             $ext = pathinfo($image->getClientOriginalName(), PATHINFO_EXTENSION);
             $imageName = date("Ymdhis");
             $imageName = $imageName . '.' . $ext;
-            $image->move('images/category', $imageName);
+            $image->move('public/images/category', $imageName);
             
             $lims_category_data['image'] = $imageName;
         }
@@ -179,7 +179,7 @@ class CategoryController extends Controller
             $ext = pathinfo($image->getClientOriginalName(), PATHINFO_EXTENSION);
             $imageName = date("Ymdhis");
             $imageName = $imageName . '.' . $ext;
-            $image->move('images/category', $imageName);
+            $image->move('public/images/category', $imageName);
             $input['image'] = $imageName;
         }
         $lims_category_data = Category::findOrFail($request->category_id);

@@ -247,7 +247,7 @@ class ProductController extends Controller
         if($images) {            
             foreach ($images as $key => $image) {
                 $imageName = $image->getClientOriginalName();
-                $image->move('images/product', $imageName);
+                $image->move('public/images/product', $imageName);
                 $image_names[] = $imageName;
             }
             $data['image'] = implode(",", $image_names);
@@ -388,7 +388,7 @@ class ProductController extends Controller
             if($images) {            
                 foreach ($images as $key => $image) {
                     $imageName = $image->getClientOriginalName();
-                    $image->move('images/product', $imageName);
+                    $image->move('public/images/product', $imageName);
                     $image_names[] = $imageName;
                 }
                 if($lims_product_data->image != 'zummXD2dvAtI.png') {

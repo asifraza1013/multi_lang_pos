@@ -36,7 +36,7 @@ class BrandController extends Controller
             $ext = pathinfo($image->getClientOriginalName(), PATHINFO_EXTENSION);
             $imageName = preg_replace('/[^a-zA-Z0-9]/', '', $input['title']);
             $imageName = $imageName . '.' . $ext;
-            $image->move('images/brand', $imageName);
+            $image->move('public/images/brand', $imageName);
             $input['image'] = $imageName;
         }
         Brand::create($input);
@@ -68,7 +68,7 @@ class BrandController extends Controller
             $ext = pathinfo($image->getClientOriginalName(), PATHINFO_EXTENSION);
             $imageName = preg_replace('/[^a-zA-Z0-9]/', '', $request->title);
             $imageName = $imageName . '.' . $ext;
-            $image->move('images/brand', $imageName);
+            $image->move('public/images/brand', $imageName);
             $lims_brand_data->image = $imageName;
         }
         $lims_brand_data->save();

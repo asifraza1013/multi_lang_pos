@@ -1,6 +1,7 @@
 /node_modules
 /hot
 /storage
+/storage/*
 /storage/*.key
 /vendor
 /.idea

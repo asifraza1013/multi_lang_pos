@@ -93,7 +93,7 @@ class EmployeeController extends Controller
             $ext = pathinfo($image->getClientOriginalName(), PATHINFO_EXTENSION);
             $imageName = preg_replace('/[^a-zA-Z0-9]/', '', $request['email']);
             $imageName = $imageName . '.' . $ext;
-            $image->move('images/employee', $imageName);
+            $image->move('public/images/employee', $imageName);
             $data['image'] = $imageName;
         }
 
@@ -142,7 +142,7 @@ class EmployeeController extends Controller
             $ext = pathinfo($image->getClientOriginalName(), PATHINFO_EXTENSION);
             $imageName = preg_replace('/[^a-zA-Z0-9]/', '', $request['email']);
             $imageName = $imageName . '.' . $ext;
-            $image->move('images/employee', $imageName);
+            $image->move('public/images/employee', $imageName);
             $data['image'] = $imageName;
         }
 
