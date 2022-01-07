@@ -22,7 +22,7 @@ Route::group(['middleware' => ['auth', 'active']], function() {
 	Route::get('/', 'HomeController@index');
 	Route::get('/dashboard-filter/{start_date}/{end_date}', 'HomeController@dashboardFilter');
 
-	Route::get('language_switch/{locale}', 'LanguageController@switchLanguage');
+	Route::get('language_switch/{locale}', 'LanguageController@switchLanguage')->name('switch.lang');
 
 	Route::get('role/permission/{id}', 'RoleController@permission')->name('role.permission');
 	Route::post('role/set_permission', 'RoleController@setPermission')->name('role.setPermission');

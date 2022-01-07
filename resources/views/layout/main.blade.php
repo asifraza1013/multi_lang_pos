@@ -860,6 +860,12 @@
                         <a href="{{route('setting.general')}}"><i class="dripicons-gear"></i> {{trans('file.settings')}}</a>
                       </li>
                       @endif
+                      <li> 
+                        <a href="{{route('switch.lang', 'en')}}"><i class="dripicons-gear"></i>English</a>
+                      </li>
+                      <li> 
+                        <a href="{{route('switch.lang', 'ar')}}"><i class="dripicons-gear"></i>Arabic</a>
+                      </li>
                       <li>
                         <a href="{{ route('logout') }}"
                            onclick="event.preventDefault();

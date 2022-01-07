@@ -383,15 +383,23 @@
             </section>
 
             <!-- Cart BG -->
-            <div class="row bb pb-3">
-                <div class="col-6">
-                    <img src="{{ast_url('images/cart.jpg')}}" class="img-fluid cart-bg" alt="" style="position: relative; height:auto; bottom:0px">
-                </div>
-                <div class="col-6 text-right">
-                    <img src="{{ast_url('images/qr_code.jpeg')}}" class="img-fluid cart-bg" alt="" style="position: relative; width:120px; height:auto; bottom:0px;top: 80px;opacity:0.8">
+            <div class="container">
+                <div class="row mt-2">
+                    <div class="col-3">
+                        <!-- <img src="{{ast_url('images/cart.jpg')}}" class="img-fluid cart-bg" alt="" style="position: relative; height:auto; bottom:0px"> -->
+                        <img src="{{ast_url('images/all_icon.jpeg')}}" class="img-fluid cart-bg" alt="" style="position: relative; height:auto; bottom:0px">
+                    </div>
+                    <div class="col-2 text-left">
+                        <img src="{{ast_url('images/merge_icon.jpg')}}" class="img-fluid cart-bg" alt="" style="position: relative; width:120px; height:auto; bottom:0px;">
+                    </div>
+                    <div class="col-2 text-left">
+                        <img src="{{ast_url('images/door_icon.jpeg')}}" class="img-fluid cart-bg" alt="" style="position: relative; width:120px; height:auto; bottom:0px;">
+                    </div>
+                    <div class="col-2">
+                        <img src="{{ast_url('images/qr_code.jpeg')}}" class="img-fluid cart-bg" alt="" style="position: relative; width:120px; height:auto; bottom:0px;opacity: 0.8;">
+                    </div>
                 </div>
             </div>
-
             <footer style="width: 90%;margin:auto;left:35px">
                 <hr>
                 <p class="m-0 text-center">
