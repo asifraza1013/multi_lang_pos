@@ -80,7 +80,7 @@ class AdjustmentController extends Controller
         $document = $request->document;
         if ($document) {
             $documentName = $document->getClientOriginalName();
-            $document->move('public/documents/adjustment', $documentName);
+            $document->move('documents/adjustment', $documentName);
             $data['document'] = $documentName;
         }
         Adjustment::create($data);
@@ -130,7 +130,7 @@ class AdjustmentController extends Controller
         $document = $request->document;
         if ($document) {
             $documentName = $document->getClientOriginalName();
-            $document->move('public/documents/adjustment', $documentName);
+            $document->move('documents/adjustment', $documentName);
             $data['document'] = $documentName;
         }
 

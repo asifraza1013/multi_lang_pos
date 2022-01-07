@@ -870,7 +870,7 @@ $('select[name="paid_by_id"]').on("change", function() {
         $('select[name="gift_card_id"]').attr('required', true);
     }
     else if (id == 3) {
-        $.getScript( "../public/vendor/stripe/checkout.js" );
+        $.getScript( "../vendor/stripe/checkout.js" );
         $(".card-element").show();
         $("#gift-card").hide();
         $("#cheque").hide();

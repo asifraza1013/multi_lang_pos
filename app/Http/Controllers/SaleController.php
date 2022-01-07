@@ -310,7 +310,7 @@ class SaleController extends Controller
                 return redirect()->back()->withErrors($v->errors());
 
             $documentName = $document->getClientOriginalName();
-            $document->move('public/sale/documents', $documentName);
+            $document->move('sale/documents', $documentName);
             $data['document'] = $documentName;
         }
         if($data['coupon_active']) {
@@ -408,7 +408,7 @@ class SaleController extends Controller
             else
                 $mail_data['products'][$i] = $lims_product_data->name;
             if($lims_product_data->type == 'digital')
-                $mail_data['file'][$i] = url('/public/product/files').'/'.$lims_product_data->file;
+                $mail_data['file'][$i] = url('/product/files').'/'.$lims_product_data->file;
             else
                 $mail_data['file'][$i] = '';
             if($sale_unit_id)
@@ -613,7 +613,7 @@ class SaleController extends Controller
                 else
                     $mail_data['products'][$key] = $lims_product_data->name;
                 if($lims_product_data->type == 'digital')
-                    $mail_data['file'][$key] = url('/public/product/files').'/'.$lims_product_data->file;
+                    $mail_data['file'][$key] = url('/product/files').'/'.$lims_product_data->file;
                 else
                     $mail_data['file'][$key] = '';
                 if($product_sale_data->sale_unit_id){
@@ -1134,7 +1134,7 @@ class SaleController extends Controller
 
             $ext = pathinfo($document->getClientOriginalName(), PATHINFO_EXTENSION);
             $documentName = $data['reference_no'] . '.' . $ext;
-            $document->move('public/documents/sale', $documentName);
+            $document->move('documents/sale', $documentName);
             $data['document'] = $documentName;
         }
         $item = 0;
@@ -1174,7 +1174,7 @@ class SaleController extends Controller
             //collecting mail data
             $mail_data['products'][$key] = $product['name'];
             if($product['type'] == 'digital')
-                $mail_data['file'][$key] = url('/public/product/files').'/'.$product['file'];
+                $mail_data['file'][$key] = url('/product/files').'/'.$product['file'];
             else
                 $mail_data['file'][$key] = '';
             if($sale_unit_id)
@@ -1298,7 +1298,7 @@ class SaleController extends Controller
                 return redirect()->back()->withErrors($v->errors());
 
             $documentName = $document->getClientOriginalName();
-            $document->move('public/sale/documents', $documentName);
+            $document->move('sale/documents', $documentName);
             $data['document'] = $documentName;
         }
         $balance = $data['grand_total'] - $data['paid_amount'];
@@ -1434,7 +1434,7 @@ class SaleController extends Controller
                 $mail_data['products'][$key] = $lims_product_data->name;
 
             if($lims_product_data->type == 'digital')
-                $mail_data['file'][$key] = url('/public/product/files').'/'.$lims_product_data->file;
+                $mail_data['file'][$key] = url('/product/files').'/'.$lims_product_data->file;
             else
                 $mail_data['file'][$key] = '';
             if($sale_unit_id)

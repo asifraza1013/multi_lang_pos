@@ -158,7 +158,7 @@ class TransferController extends Controller
                 return redirect()->back()->withErrors($v->errors());
 
             $documentName = $document->getClientOriginalName();
-            $document->move('public/documents/transfer', $documentName);
+            $document->move('documents/transfer', $documentName);
             $data['document'] = $documentName;
         }
         Transfer::create($data);
@@ -325,7 +325,7 @@ class TransferController extends Controller
             
             $ext = pathinfo($document->getClientOriginalName(), PATHINFO_EXTENSION);
             $documentName = $data['reference_no'] . '.' . $ext;
-            $document->move('public/documents/transfer', $documentName);
+            $document->move('documents/transfer', $documentName);
             $data['document'] = $documentName;
         }
         $item = 0;
@@ -436,7 +436,7 @@ class TransferController extends Controller
                 return redirect()->back()->withErrors($v->errors());
 
             $documentName = $document->getClientOriginalName();
-            $document->move('public/documents/transfer', $documentName);
+            $document->move('documents/transfer', $documentName);
             $data['document'] = $documentName;
         }
 

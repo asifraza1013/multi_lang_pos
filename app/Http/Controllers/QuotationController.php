@@ -83,7 +83,7 @@ class QuotationController extends Controller
             if ($v->fails())
                 return redirect()->back()->withErrors($v->errors());
             $documentName = $document->getClientOriginalName();
-            $document->move('public/quotation/documents', $documentName);
+            $document->move('quotation/documents', $documentName);
             $data['document'] = $documentName;
         }
         $data['reference_no'] = 'qr-' . date("Ymd") . '-'. date("his");
@@ -402,7 +402,7 @@ class QuotationController extends Controller
                 return redirect()->back()->withErrors($v->errors());
 
             $documentName = $document->getClientOriginalName();
-            $document->move('public/quotation/documents', $documentName);
+            $document->move('quotation/documents', $documentName);
             $data['document'] = $documentName;
         }
         $lims_quotation_data = Quotation::find($id);

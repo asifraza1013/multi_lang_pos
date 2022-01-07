@@ -2640,7 +2640,7 @@ function cheque() {
 }
 
 function creditCard() {
-    $.getScript( "../../public/vendor/stripe/checkout.js" );
+    $.getScript( "../../vendor/stripe/checkout.js" );
     $(".card-element").show();
     $(".card-errors").show();
     $("#cheque").hide();

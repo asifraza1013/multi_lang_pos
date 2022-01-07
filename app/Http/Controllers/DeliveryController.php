@@ -62,7 +62,7 @@ class DeliveryController extends Controller
         if ($document) {
             $ext = pathinfo($document->getClientOriginalName(), PATHINFO_EXTENSION);
             $documentName = $data['reference_no'] . '.' . $ext;
-            $document->move('public/documents/delivery', $documentName);
+            $document->move('documents/delivery', $documentName);
             $delivery->file = $documentName;
         }
         $delivery->sale_id = $data['sale_id'];
@@ -122,7 +122,7 @@ class DeliveryController extends Controller
         if ($document) {
             $ext = pathinfo($document->getClientOriginalName(), PATHINFO_EXTENSION);
             $documentName = $input['reference_no'] . '.' . $ext;
-            $document->move('public/documents/delivery', $documentName);
+            $document->move('documents/delivery', $documentName);
             $input['file'] = $documentName;
         }
     	$lims_delivery_data->update($input);

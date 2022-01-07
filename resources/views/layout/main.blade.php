@@ -11,80 +11,80 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
     <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="<?php echo asset('vendor/bootstrap/css/bootstrap.min.css') ?>" type="text/css">
-    <link rel="stylesheet" href="<?php echo asset('vendor/bootstrap-toggle/css/bootstrap-toggle.min.css') ?>" type="text/css">
-    <link rel="stylesheet" href="<?php echo asset('vendor/bootstrap/css/bootstrap-datepicker.min.css') ?>" type="text/css">
-    <link rel="stylesheet" href="<?php echo asset('vendor/jquery-timepicker/jquery.timepicker.min.css') ?>" type="text/css">
-    <link rel="stylesheet" href="<?php echo asset('vendor/bootstrap/css/awesome-bootstrap-checkbox.css') ?>" type="text/css">
-    <link rel="stylesheet" href="<?php echo asset('vendor/bootstrap/css/bootstrap-select.min.css') ?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo ast_url('vendor/bootstrap/css/bootstrap.min.css') ?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo ast_url('vendor/bootstrap-toggle/css/bootstrap-toggle.min.css') ?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo ast_url('vendor/bootstrap/css/bootstrap-datepicker.min.css') ?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo ast_url('vendor/jquery-timepicker/jquery.timepicker.min.css') ?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo ast_url('vendor/bootstrap/css/awesome-bootstrap-checkbox.css') ?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo ast_url('vendor/bootstrap/css/bootstrap-select.min.css') ?>" type="text/css">
     <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="<?php echo asset('vendor/font-awesome/css/font-awesome.min.css') ?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo ast_url('vendor/font-awesome/css/font-awesome.min.css') ?>" type="text/css">
     <!-- Drip icon font-->
-    <link rel="stylesheet" href="<?php echo asset('vendor/dripicons/webfont.css') ?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo ast_url('vendor/dripicons/webfont.css') ?>" type="text/css">
     <!-- Google fonts - Roboto -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:400,500,700">
     <!-- jQuery Circle-->
-    <link rel="stylesheet" href="<?php echo asset('css/grasp_mobile_progress_circle-1.0.0.min.css') ?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo ast_url('css/grasp_mobile_progress_circle-1.0.0.min.css') ?>" type="text/css">
     <!-- Custom Scrollbar-->
-    <link rel="stylesheet" href="<?php echo asset('vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css') ?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo ast_url('vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css') ?>" type="text/css">
     <!-- virtual keybord stylesheet-->
-    <link rel="stylesheet" href="<?php echo asset('vendor/keyboard/css/keyboard.css') ?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo ast_url('vendor/keyboard/css/keyboard.css') ?>" type="text/css">
     <!-- date range stylesheet-->
-    <link rel="stylesheet" href="<?php echo asset('vendor/daterange/css/daterangepicker.min.css') ?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo ast_url('vendor/daterange/css/daterangepicker.min.css') ?>" type="text/css">
     <!-- table sorter stylesheet-->
-    <link rel="stylesheet" type="text/css" href="<?php echo asset('vendor/datatable/dataTables.bootstrap4.min.css') ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo ast_url('vendor/datatable/dataTables.bootstrap4.min.css') ?>">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.1.6/css/fixedHeader.bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo asset('css/style.default.css') ?>" id="theme-stylesheet" type="text/css">
-    <link rel="stylesheet" href="<?php echo asset('css/dropzone.css') ?>">
-    <link rel="stylesheet" href="<?php echo asset('css/style.css') ?>">
+    <link rel="stylesheet" href="<?php echo ast_url('css/style.default.css') ?>" id="theme-stylesheet" type="text/css">
+    <link rel="stylesheet" href="<?php echo ast_url('css/dropzone.css') ?>">
+    <link rel="stylesheet" href="<?php echo ast_url('css/style.css') ?>">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 
-    <script type="text/javascript" src="<?php echo asset('vendor/jquery/jquery.min.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo asset('vendor/jquery/jquery-ui.min.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo asset('vendor/jquery/bootstrap-datepicker.min.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo asset('vendor/jquery/jquery.timepicker.min.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo asset('vendor/popper.js/umd/popper.min.js') ?>">
+    <script type="text/javascript" src="<?php echo ast_url('vendor/jquery/jquery.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo ast_url('vendor/jquery/jquery-ui.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo ast_url('vendor/jquery/bootstrap-datepicker.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo ast_url('vendor/jquery/jquery.timepicker.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo ast_url('vendor/popper.js/umd/popper.min.js') ?>">
     </script>
-    <script type="text/javascript" src="<?php echo asset('vendor/bootstrap/js/bootstrap.min.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo asset('vendor/bootstrap-toggle/js/bootstrap-toggle.min.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo asset('vendor/bootstrap/js/bootstrap-select.min.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo asset('vendor/keyboard/js/jquery.keyboard.js') ?>"></script>  
-    <script type="text/javascript" src="<?php echo asset('vendor/keyboard/js/jquery.keyboard.extension-autocomplete.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo asset('js/grasp_mobile_progress_circle-1.0.0.min.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo asset('vendor/jquery.cookie/jquery.cookie.js') ?>">
+    <script type="text/javascript" src="<?php echo ast_url('vendor/bootstrap/js/bootstrap.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo ast_url('vendor/bootstrap-toggle/js/bootstrap-toggle.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo ast_url('vendor/bootstrap/js/bootstrap-select.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo ast_url('vendor/keyboard/js/jquery.keyboard.js') ?>"></script>  
+    <script type="text/javascript" src="<?php echo ast_url('vendor/keyboard/js/jquery.keyboard.extension-autocomplete.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo ast_url('js/grasp_mobile_progress_circle-1.0.0.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo ast_url('vendor/jquery.cookie/jquery.cookie.js') ?>">
     </script>
-    <script type="text/javascript" src="<?php echo asset('vendor/chart.js/Chart.min.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo asset('vendor/jquery-validation/jquery.validate.min.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo asset('vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js')?>"></script>
-    <script type="text/javascript" src="<?php echo asset('js/charts-custom.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo asset('js/front.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo asset('vendor/daterange/js/moment.min.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo asset('vendor/daterange/js/knockout-3.4.2.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo asset('vendor/daterange/js/daterangepicker.min.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo asset('vendor/tinymce/js/tinymce/tinymce.min.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo asset('js/dropzone.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo ast_url('vendor/chart.js/Chart.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo ast_url('vendor/jquery-validation/jquery.validate.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo ast_url('vendor/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js')?>"></script>
+    <script type="text/javascript" src="<?php echo ast_url('js/charts-custom.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo ast_url('js/front.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo ast_url('vendor/daterange/js/moment.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo ast_url('vendor/daterange/js/knockout-3.4.2.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo ast_url('vendor/daterange/js/daterangepicker.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo ast_url('vendor/tinymce/js/tinymce/tinymce.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo ast_url('js/dropzone.js') ?>"></script>
     
     <!-- table sorter js-->
-    <script type="text/javascript" src="<?php echo asset('vendor/datatable/pdfmake.min.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo asset('vendor/datatable/vfs_fonts.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo asset('vendor/datatable/jquery.dataTables.min.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo asset('vendor/datatable/dataTables.bootstrap4.min.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo asset('vendor/datatable/dataTables.buttons.min.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo asset('vendor/datatable/buttons.bootstrap4.min.js') ?>">"></script>
-    <script type="text/javascript" src="<?php echo asset('vendor/datatable/buttons.colVis.min.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo asset('vendor/datatable/buttons.html5.min.js') ?>"></script>
-    <script type="text/javascript" src="<?php echo asset('vendor/datatable/buttons.print.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo ast_url('vendor/datatable/pdfmake.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo ast_url('vendor/datatable/vfs_fonts.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo ast_url('vendor/datatable/jquery.dataTables.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo ast_url('vendor/datatable/dataTables.bootstrap4.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo ast_url('vendor/datatable/dataTables.buttons.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo ast_url('vendor/datatable/buttons.bootstrap4.min.js') ?>">"></script>
+    <script type="text/javascript" src="<?php echo ast_url('vendor/datatable/buttons.colVis.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo ast_url('vendor/datatable/buttons.html5.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo ast_url('vendor/datatable/buttons.print.min.js') ?>"></script>
 
-    <script type="text/javascript" src="<?php echo asset('vendor/datatable/sum().js') ?>"></script>
-    <script type="text/javascript" src="<?php echo asset('vendor/datatable/dataTables.checkboxes.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo ast_url('vendor/datatable/sum().js') ?>"></script>
+    <script type="text/javascript" src="<?php echo ast_url('vendor/datatable/dataTables.checkboxes.min.js') ?>"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/fixedheader/3.1.6/js/dataTables.fixedHeader.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap.min.js"></script> 
     <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="<?php echo asset('css/custom-'.$general_setting->theme) ?>" type="text/css" id="custom-style">
+    <link rel="stylesheet" href="<?php echo ast_url('css/custom-'.$general_setting->theme) ?>" type="text/css" id="custom-style">
   </head>
   
   <body onload="myFunction()">
@@ -817,7 +817,7 @@
           <div class="container-fluid">
             <div class="navbar-holder d-flex align-items-center justify-content-between">
               <a id="toggle-btn" href="#" class="menu-btn"><i class="fa fa-bars"> </i></a>
-              <span class="brand-big">@if($general_setting->site_logo)<img src="{{url('logo', $general_setting->site_logo)}}" width="50">&nbsp;&nbsp;@endif<a href="{{url('/')}}"><h1 class="d-inline">{{$general_setting->site_title}}</h1></a></span>
+              <span class="brand-big">@if($general_setting->site_logo)<img src="{{url('public/logo', $general_setting->site_logo)}}" width="50">&nbsp;&nbsp;@endif<a href="{{url('/')}}"><h1 class="d-inline">{{$general_setting->site_title}}</h1></a></span>
               
               <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
                 <?php 

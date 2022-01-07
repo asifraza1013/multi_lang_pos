@@ -761,7 +761,7 @@
                                             @if($lims_pos_setting_data)
                                             <input type="hidden" name="warehouse_id_hidden" value="1">
                                             @endif
-                                            <select required id="warehouse_id" name="warehouse_id" class="selectpicker form-control" data-live-search="true" data-live-search-style="begins" title="Select warehouse...">
+                                            <select required id="warehouse_id" name="warehouse_id" class="form-control">
                                                 @foreach($lims_warehouse_list as $warehouse)
                                                 <option value="{{$warehouse->id}}" 
                                                     {{ ($warehouse->id == 1) ? "selected" : '' }}
@@ -775,7 +775,7 @@
                                             @if($lims_pos_setting_data)
                                             <input type="hidden" name="biller_id_hidden" value="{{$lims_pos_setting_data->biller_id}}">
                                             @endif
-                                            <select required id="biller_id" name="biller_id" class="selectpicker form-control" data-live-search="true" data-live-search-style="begins" title="Select Biller...">
+                                            <select required id="biller_id" name="biller_id" class="form-control">
                                             @foreach($lims_biller_list as $biller)
                                             <option value="{{$biller->id}}">{{$biller->name . ' (' . $biller->company_name . ')'}}</option>
                                             @endforeach
@@ -789,7 +789,7 @@
                                             @endif
                                             <div class="input-group pos">
                                                 @if($customer_active)
-                                                <select required name="customer_id" id="customer_id" class="selectpicker form-control" data-live-search="true" data-live-search-style="begins" title="Select customer..." style="width: 100px">
+                                                <select required name="customer_id" id="customer_id" class="form-control" style="width: 100px">
                                                 <?php $deposit = [] ?>
                                                 @foreach($lims_customer_list as $customer)
                                                     @php $deposit[$customer->id] = $customer->deposit - $customer->expense; @endphp
@@ -878,14 +878,17 @@
                                 </div>
                                 <div class="col-12 totals" style="border-top: 2px solid #e4e6fc; padding-top: 10px;">
                                     <div class="row">
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-6">
                                             <span class="totals-title">{{trans('file.Items')}}</span><span id="item">0</span>
                                         </div>
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-6">
                                             <span class="totals-title">{{trans('file.Total')}}</span><span id="subtotal">0.00</span>
                                         </div>
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-6">
                                             <span class="totals-title">{{trans('file.Discount')}} <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#order-discount"> <i class="dripicons-document-edit"></i></button></span><span id="discount">0.00</span>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <span class="totals-title">{{trans('file.Tax')}} <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#order-tax"><i class="dripicons-document-edit"></i></button></span><span id="tax">15.00</span>
                                         </div>
                                         {{-- <div class="col-sm-4">
                                             <span class="totals-title">{{trans('file.Coupon')}} <button type="button" class="btn btn-link btn-sm" data-toggle="modal" data-target="#coupon-modal"><i class="dripicons-document-edit"></i></button></span><span id="coupon-text">0.00</span>
@@ -1065,7 +1068,6 @@
                             <div class="form-group">
                                 <input type="hidden" name="order_tax_rate">
                                 <select class="form-control" name="order_tax_rate_select">
-                                    <option value="0">No Tax</option>
                                     @foreach($lims_tax_list as $tax)
                                     <option value="{{$tax->rate}}">{{$tax->name}}</option>
                                     @endforeach
@@ -1316,7 +1318,7 @@
                                     <input type="text" name="edit_unit_price" class="form-control numkey" step="any">
                                 </div>
                                 <?php
-                        $tax_name_all[] = 'No Tax';
+                        $tax_name_all = [];
                         $tax_rate_all[] = 0;
                         foreach($lims_tax_list as $tax) {
                             $tax_name_all[] = $tax->name;
@@ -1719,7 +1721,7 @@ $("#print-btn").on("click", function(){
       var divToPrint=document.getElementById('sale-details');
       var newWin=window.open('','Print-Window');
       newWin.document.open();
-      newWin.document.write('<link rel="stylesheet" href="<?php echo asset('vendor/bootstrap/css/bootstrap.min.css') ?>" type="text/css"><style type="text/css">@media print {.modal-dialog { max-width: 1000px;} }</style><body onload="window.print()">'+divToPrint.innerHTML+'</body>');
+      newWin.document.write('<link rel="stylesheet" href="<?php echo ast_url('vendor/bootstrap/css/bootstrap.min.css') ?>" type="text/css"><style type="text/css">@media print {.modal-dialog { max-width: 1000px;} }</style><body onload="window.print()">'+divToPrint.innerHTML+'</body>');
       newWin.document.close();
       setTimeout(function(){newWin.close();},10);
 });
@@ -2557,7 +2559,7 @@ function cheque() {
 }
 
 function creditCard() {
-    $.getScript( "public/vendor/stripe/checkout.js" );
+    $.getScript( "vendor/stripe/checkout.js" );
     $(".card-element").show();
     $(".card-errors").show();
     $(".cheque").hide();

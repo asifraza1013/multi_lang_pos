@@ -55,12 +55,6 @@ class SettingController extends Controller
         ]);
 
         $data = $request->except('site_logo');
-        //writting timezone info in .env file
-        $path = '.env';
-        $searchArray = array('APP_TIMEZONE='.env('APP_TIMEZONE'));
-        $replaceArray = array('APP_TIMEZONE='.$data['timezone']);
-
-        file_put_contents($path, str_replace($searchArray, $replaceArray, file_get_contents($path)));
 
         $general_setting = GeneralSetting::latest()->first();
         $general_setting->id = 1;
@@ -76,6 +70,12 @@ class SettingController extends Controller
             $general_setting->site_logo = $logoName;
         }
         $general_setting->save();
+        //writting timezone info in .env file
+        $path = '.env';
+        $searchArray = array('APP_TIMEZONE='.env('APP_TIMEZONE'));
+        $replaceArray = array('APP_TIMEZONE='.$data['timezone']);
+
+        file_put_contents($path, str_replace($searchArray, $replaceArray, file_get_contents($path)));
         return redirect()->back()->with('message', 'Data updated successfully');
     }
 
@@ -217,13 +217,6 @@ class SettingController extends Controller
             return redirect()->back()->with('not_permitted', 'This feature is disable for demo!');
 
     	$data = $request->all();
-        //writting paypal info in .env file
-        $path = '.env';
-        $searchArray = array('PAYPAL_LIVE_API_USERNAME='.env('PAYPAL_LIVE_API_USERNAME'), 'PAYPAL_LIVE_API_PASSWORD='.env('PAYPAL_LIVE_API_PASSWORD'), 'PAYPAL_LIVE_API_SECRET='.env('PAYPAL_LIVE_API_SECRET') );
-
-        $replaceArray = array('PAYPAL_LIVE_API_USERNAME='.$data['paypal_username'], 'PAYPAL_LIVE_API_PASSWORD='.$data['paypal_password'], 'PAYPAL_LIVE_API_SECRET='.$data['paypal_signature'] );
-
-        file_put_contents($path, str_replace($searchArray, $replaceArray, file_get_contents($path)));
 
     	$pos_setting = PosSetting::firstOrNew(['id' => 1]);
     	$pos_setting->id = 1;
@@ -238,6 +231,13 @@ class SettingController extends Controller
         else
             $pos_setting->keybord_active = true;
     	$pos_setting->save();
+        //writting paypal info in .env file
+        $path = '.env';
+        $searchArray = array('PAYPAL_LIVE_API_USERNAME='.env('PAYPAL_LIVE_API_USERNAME'), 'PAYPAL_LIVE_API_PASSWORD='.env('PAYPAL_LIVE_API_PASSWORD'), 'PAYPAL_LIVE_API_SECRET='.env('PAYPAL_LIVE_API_SECRET') );
+
+        $replaceArray = array('PAYPAL_LIVE_API_USERNAME='.$data['paypal_username'], 'PAYPAL_LIVE_API_PASSWORD='.$data['paypal_password'], 'PAYPAL_LIVE_API_SECRET='.$data['paypal_signature'] );
+
+        file_put_contents($path, str_replace($searchArray, $replaceArray, file_get_contents($path)));
     	return redirect()->back()->with('message', 'POS setting updated successfully');
     }
 }

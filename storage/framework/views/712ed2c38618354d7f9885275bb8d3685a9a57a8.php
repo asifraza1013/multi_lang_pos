@@ -65,18 +65,7 @@
                                         </table>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label><?php echo e(trans('file.Brand')); ?></strong> </label>
-                                        <div class="input-group">
-                                          <select name="brand_id" class="selectpicker form-control" data-live-search="true" data-live-search-style="begins" title="Select Brand...">
-                                            <?php $__currentLoopData = $lims_brand_list; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $brand): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                <option value="<?php echo e($brand->id); ?>"><?php echo e($brand->title); ?></option>
-                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                          </select>
-                                      </div>
-                                    </div>
-                                </div>
+                                
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label><?php echo e(trans('file.category')); ?> *</strong> </label>
@@ -90,40 +79,21 @@
                                       <span class="validation-msg"></span>
                                     </div>
                                 </div>
-                                <div id="unit" class="col-md-12">
-                                    <div class="row ">
-                                        <div class="col-md-4 form-group">
-                                                <label><?php echo e(trans('file.Product Unit')); ?> *</strong> </label>
-                                                <div class="input-group">
-                                                  <select required class="form-control selectpicker" name="unit_id">
-                                                    <option value="" disabled selected>Select Product Unit...</option>
-                                                    <?php $__currentLoopData = $lims_unit_list; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $unit): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                        <?php if($unit->base_unit==null): ?>
-                                                            <option value="<?php echo e($unit->id); ?>"><?php echo e($unit->unit_name); ?></option>
-                                                        <?php endif; ?>
-                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                                  </select>
-                                              </div>
-                                              <span class="validation-msg"></span>
-                                        </div>
-                                        <div class="col-md-4">
-                                                <label><?php echo e(trans('file.Sale Unit')); ?></strong> </label>
-                                                <div class="input-group">
-                                                  <select class="form-control selectpicker" name="sale_unit_id"> 
-                                                  </select>
-                                              </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                                <div class="form-group">
-                                                    <label><?php echo e(trans('file.Purchase Unit')); ?></strong> </label>
-                                                    <div class="input-group">
-                                                      <select class="form-control selectpicker" name="purchase_unit_id"> 
-                                                      </select>
-                                                  </div>
-                                                </div>
-                                        </div>                                
-                                    </div>                                
-                                </div>
+                                <div class="col-md-6 form-group" id="unit">
+                                    <label><?php echo e(trans('file.Product Unit')); ?> *</strong> </label>
+                                    <div class="input-group">
+                                      <select required class="form-control selectpicker" name="unit_id">
+                                        <option value="" disabled selected>Select Product Unit...</option>
+                                        <?php $__currentLoopData = $lims_unit_list; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $unit): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                            <?php if($unit->base_unit==null): ?>
+                                                <option value="<?php echo e($unit->id); ?>"><?php echo e($unit->unit_name); ?></option>
+                                            <?php endif; ?>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                      </select>
+                                  </div>
+                                  <span class="validation-msg"></span>
+                            </div>
+                                
                                 <div id="cost" class="col-md-6">
                                      <div class="form-group">
                                         <label><?php echo e(trans('file.Product Cost')); ?> *</strong> </label>
@@ -620,8 +590,7 @@
                             url:'<?php echo e(route('products.store')); ?>',
                             data: $("#product-form").serialize(),
                             success:function(response){
-                                //console.log(response);
-                                location.href = '../products';
+                                // location.href = '../products';
                             },
                             error:function(response) {
                               if(response.responseJSON.errors.name) {
@@ -681,7 +650,7 @@
             }
         },
         successmultiple: function (file, response) {
-            location.href = '../products';
+            // location.href = '../products';
             //console.log(file, response);
         },
         completemultiple: function (file, response) {

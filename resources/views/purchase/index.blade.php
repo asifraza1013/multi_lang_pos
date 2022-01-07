@@ -290,7 +290,7 @@
           var divToPrint=document.getElementById('purchase-details');
           var newWin=window.open('','Print-Window');
           newWin.document.open();
-          newWin.document.write('<link rel="stylesheet" href="<?php echo asset('vendor/bootstrap/css/bootstrap.min.css') ?>" type="text/css"><style type="text/css">@media print {.modal-dialog { max-width: 1000px;} }</style><body onload="window.print()">'+divToPrint.innerHTML+'</body>');
+          newWin.document.write('<link rel="stylesheet" href="<?php echo ast_url('vendor/bootstrap/css/bootstrap.min.css') ?>" type="text/css"><style type="text/css">@media print {.modal-dialog { max-width: 1000px;} }</style><body onload="window.print()">'+divToPrint.innerHTML+'</body>');
           newWin.document.close();
           setTimeout(function(){newWin.close();},10);
     });
@@ -358,7 +358,7 @@
                     $('select[name="edit_paid_by_id"]').val(1);
                 else if(paying_method[index] == 'Credit Card'){
                     $('select[name="edit_paid_by_id"]').val(3);
-                    $.getScript( "public/vendor/stripe/checkout.js" );
+                    $.getScript( "vendor/stripe/checkout.js" );
                     $(".card-element").show();
                     $("#edit-cheque").hide();
                     $('#edit-payment select[name="edit_paid_by_id"]').prop('disabled', true);
@@ -387,7 +387,7 @@
         $('input[name="cheque_no"]').attr('required', false);
         $(".payment-form").off("submit");
         if (id == 3) {
-            $.getScript( "public/vendor/stripe/checkout.js" );
+            $.getScript( "vendor/stripe/checkout.js" );
             $(".card-element").show();
             $("#cheque").hide();
         } else if (id == 4) {
@@ -422,7 +422,7 @@
         $(".payment-form").off("submit");
         if (id == 3) {
             $(".edit-btn").attr('data-clicked', true);
-            $.getScript( "public/vendor/stripe/checkout.js" );
+            $.getScript( "vendor/stripe/checkout.js" );
             $(".card-element").show();
             $("#edit-cheque").hide();
         } else if (id == 4) {

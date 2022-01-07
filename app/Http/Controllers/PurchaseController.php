@@ -22,6 +22,7 @@ use Stripe\Stripe;
 use Auth;
 use App\User;
 use App\ProductVariant;
+use Illuminate\Support\Facades\Log;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use Illuminate\Support\Facades\Validator;
@@ -316,7 +317,8 @@ class PurchaseController extends Controller
     public function store(Request $request)
     {
         $data = $request->except('document');
-        //return dd($data);
+        Log::info("request".json_encode($request->all()));
+        // return dd($data);
         $data['user_id'] = Auth::id();
         $data['reference_no'] = 'pr-' . date("Ymd") . '-'. date("his");
         $document = $request->document;
@@ -333,11 +335,10 @@ class PurchaseController extends Controller
                 return redirect()->back()->withErrors($v->errors());
 
             $documentName = $document->getClientOriginalName();
-            $document->move('public/documents/purchase', $documentName);
+            $document->move('documents/purchase', $documentName);
             $data['document'] = $documentName;
         }
         
-        //return dd($data);
         Purchase::create($data);
 
         $lims_purchase_data = Purchase::latest()->first();
@@ -503,7 +504,7 @@ class PurchaseController extends Controller
 
             $ext = pathinfo($document->getClientOriginalName(), PATHINFO_EXTENSION);
             $documentName = $data['reference_no'] . '.' . $ext;
-            $document->move('public/documents/purchase', $documentName);
+            $document->move('documents/purchase', $documentName);
             $data['document'] = $documentName;
         }
         $item = 0;
@@ -610,7 +611,7 @@ class PurchaseController extends Controller
                 return redirect()->back()->withErrors($v->errors());
 
             $documentName = $document->getClientOriginalName();
-            $document->move('public/purchase/documents', $documentName);
+            $document->move('purchase/documents', $documentName);
             $data['document'] = $documentName;
         }
         //return dd($data);

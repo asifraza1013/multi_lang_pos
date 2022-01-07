@@ -361,7 +361,7 @@
                     $('select[name="edit_paid_by_id"]').val(1);
                 else if(paying_method[index] == 'Credit Card'){
                     $('select[name="edit_paid_by_id"]').val(3);
-                    $.getScript( "public/vendor/stripe/checkout.js" );
+                    $.getScript( "vendor/stripe/checkout.js" );
                     $(".card-element").show();
                     $("#edit-cheque").hide();
                     $('#edit-payment select[name="edit_paid_by_id"]').prop('disabled', true);
@@ -390,7 +390,7 @@
         $('input[name="cheque_no"]').attr('required', false);
         $(".payment-form").off("submit");
         if (id == 3) {
-            $.getScript( "public/vendor/stripe/checkout.js" );
+            $.getScript( "vendor/stripe/checkout.js" );
             $(".card-element").show();
             $("#cheque").hide();
         } else if (id == 4) {
@@ -425,7 +425,7 @@
         $(".payment-form").off("submit");
         if (id == 3) {
             $(".edit-btn").attr('data-clicked', true);
-            $.getScript( "public/vendor/stripe/checkout.js" );
+            $.getScript( "vendor/stripe/checkout.js" );
             $(".card-element").show();
             $("#edit-cheque").hide();
         } else if (id == 4) {

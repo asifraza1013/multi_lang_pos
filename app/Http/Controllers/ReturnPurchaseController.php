@@ -180,7 +180,7 @@ class ReturnPurchaseController extends Controller
                 return redirect()->back()->withErrors($v->errors());
 
             $documentName = $document->getClientOriginalName();
-            $document->move('public/return/documents', $documentName);
+            $document->move('return/documents', $documentName);
             $data['document'] = $documentName;
         }
 
@@ -385,7 +385,7 @@ class ReturnPurchaseController extends Controller
                 return redirect()->back()->withErrors($v->errors());
             
             $documentName = $document->getClientOriginalName();
-            $document->move('public/return/documents', $documentName);
+            $document->move('return/documents', $documentName);
             $data['document'] = $documentName;
         }
 

@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
     <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="<?php echo e(asset('vendor/bootstrap/css/bootstrap.min.css')); ?>" type="text/css">
+    <link rel="stylesheet" href="<?php echo e(ast_url('vendor/bootstrap/css/bootstrap.min.css')); ?>" type="text/css">
     <link rel="stylesheet" href="<?php echo asset('vendor/bootstrap/css/bootstrap-datepicker.min.css') ?>" type="text/css">
     <link rel="stylesheet" href="<?php echo asset('vendor/bootstrap/css/bootstrap-select.min.css') ?>" type="text/css">
     <!-- Font Awesome CSS-->
@@ -55,7 +55,7 @@
             <?php if(session()->has('delete_message')): ?>
             <div class="alert alert-danger alert-dismissible text-center"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button><?php echo e(session()->get('delete_message')); ?></div> 
             <?php endif; ?>
-            <form method="POST" action="<?php echo e(route('login')); ?>" id="login-form">
+            <form action="<?php echo e(route('login')); ?>" method="post">
               <?php echo csrf_field(); ?>
               <div class="form-group-material">
                 <input id="login-username" type="text" name="name" required class="input-material" value="">

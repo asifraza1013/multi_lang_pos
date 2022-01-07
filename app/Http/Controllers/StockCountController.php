@@ -90,7 +90,7 @@ class StockCountController extends Controller
         $data = $request->all();
         $document = $request->final_file;
         $documentName = date('Ymd').'-'.date('his'). ".csv";
-        $document->move('public/stock_count/', $documentName);
+        $document->move('stock_count/', $documentName);
         $data['final_file'] = $documentName;
         $lims_stock_count_data = StockCount::find($data['stock_count_id']);
         $lims_stock_count_data->update($data);
@@ -100,7 +100,7 @@ class StockCountController extends Controller
     public function stockDif($id)
     {
         $lims_stock_count_data = StockCount::find($id);
-        $file_handle = fopen('public/stock_count/'.$lims_stock_count_data->final_file, 'r');
+        $file_handle = fopen('stock_count/'.$lims_stock_count_data->final_file, 'r');
         $i = 0;
         $temp_dif = -1000000;
         $data = [];
@@ -144,7 +144,7 @@ class StockCountController extends Controller
         $lims_warehouse_list = Warehouse::where('is_active', true)->get();
         $lims_stock_count_data = StockCount::find($id);
         $warehouse_id = $lims_stock_count_data->warehouse_id;
-        $file_handle = fopen('public/stock_count/'.$lims_stock_count_data->final_file, 'r');
+        $file_handle = fopen('stock_count/'.$lims_stock_count_data->final_file, 'r');
         $i = 0;
         $product_id = [];
         while( !feof($file_handle) ) {

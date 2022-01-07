@@ -194,10 +194,11 @@ class ProductController extends Controller
     
     public function create()
     {
+        $lims_brand_list = null;
         $role = Role::firstOrCreate(['id' => Auth::user()->role_id]);
         if ($role->hasPermissionTo('products-add')){
             $lims_product_list = Product::where([ ['is_active', true], ['type', 'standard'] ])->get();
-            $lims_brand_list = Brand::where('is_active', true)->get();
+            // $lims_brand_list = Brand::where('is_active', true)->get();
             $lims_category_list = Category::where('is_active', true)->get();
             $lims_unit_list = Unit::where('is_active', true)->get();
             $lims_tax_list = Tax::where('is_active', true)->get();
@@ -209,6 +210,7 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
+        
         $this->validate($request, [
             'code' => [
                 'max:255',
@@ -245,7 +247,7 @@ class ProductController extends Controller
         if($images) {            
             foreach ($images as $key => $image) {
                 $imageName = $image->getClientOriginalName();
-                $image->move('public/images/product', $imageName);
+                $image->move('images/product', $imageName);
                 $image_names[] = $imageName;
             }
             $data['image'] = implode(",", $image_names);
@@ -261,6 +263,10 @@ class ProductController extends Controller
             $file->move('product/files', $fileName);
             $data['file'] = $fileName;
         }
+        $data['brand_id'] = 1;
+        $data['purchase_unit_id'] = 1;
+        $data['sale_unit_id'] = 1;
+
         $lims_product_data = Product::create($data);
         //dealing with product variant
         if(isset($data['is_variant'])) {
@@ -278,6 +284,41 @@ class ProductController extends Controller
                 $lims_product_variant_data->save();
             }
         }
+
+        // add purchase
+        $prod = Product::latest()->first();
+        $purhcaserequest = new Request([
+            'warehouse_id'   => 1,
+            'supplier_id' => 1,
+            'status' => 1,
+            'qty' => [100],
+            'recieved' => [100],
+            'product_code' => $prod->code,
+            'product_id' => [$prod->id],
+            'purchase_unit' => ['Piece'],
+            'net_unit_cost' => [$prod->cost],
+            'discount' => [0],
+            'tax_rate' => [0],
+            'tax' => [0],
+            'subtotal' => [$prod->cost],
+            'total_qty' => 100,
+            'total_discount' => 0,
+            'total_tax' => 0,
+            'total_cost' => $prod->cost * 100,
+            'item' => 1,
+            'order_tax' => 0,
+            'grand_total' => $prod->cost * 100,
+            'paid_amount' => $prod->cost * 100,
+            'payment_status' => 2,
+            'order_tax_rate' => 2,
+            'order_discount' => null,
+            'shipping_cost' => null,
+            'note' => 'System generated purchase',
+        ]);
+        Log::info('Purchase '.json_encode($purhcaserequest->all()));
+        $purchaes = new PurchaseController;
+        $purchaes->store($purhcaserequest);
+
         \Session::flash('create_message', 'Product created successfully');
     }
 
@@ -347,7 +388,7 @@ class ProductController extends Controller
             if($images) {            
                 foreach ($images as $key => $image) {
                     $imageName = $image->getClientOriginalName();
-                    $image->move('public/images/product', $imageName);
+                    $image->move('images/product', $imageName);
                     $image_names[] = $imageName;
                 }
                 if($lims_product_data->image != 'zummXD2dvAtI.png') {
@@ -366,7 +407,7 @@ class ProductController extends Controller
                 $ext = pathinfo($file->getClientOriginalName(), PATHINFO_EXTENSION);
                 $fileName = strtotime(date('Y-m-d H:i:s'));
                 $fileName = $fileName . '.' . $ext;
-                $file->move('public/product/files', $fileName);
+                $file->move('product/files', $fileName);
                 $data['file'] = $fileName;
             }
             $lims_product_data->update($data);
@@ -581,7 +622,7 @@ class ProductController extends Controller
         if($lims_product_data->image != 'zummXD2dvAtI.png') {
             $images = explode(",", $lims_product_data->image);
             foreach ($images as $key => $image) {
-                unlink('public/images/product/'.$image);
+                unlink('images/product/'.$image);
             }
         }
         $lims_product_data->save();

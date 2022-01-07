@@ -64,7 +64,7 @@ class SupplierController extends Controller
             $ext = pathinfo($image->getClientOriginalName(), PATHINFO_EXTENSION);
             $imageName = preg_replace('/[^a-zA-Z0-9]/', '', $request['company_name']);
             $imageName = $imageName . '.' . $ext;
-            $image->move('public/images/supplier', $imageName);
+            $image->move('images/supplier', $imageName);
             $lims_supplier_data['image'] = $imageName;
         }
         Supplier::create($lims_supplier_data);
@@ -117,7 +117,7 @@ class SupplierController extends Controller
             $ext = pathinfo($image->getClientOriginalName(), PATHINFO_EXTENSION);
             $imageName = preg_replace('/[^a-zA-Z0-9]/', '', $request['company_name']);
             $imageName = $imageName . '.' . $ext;
-            $image->move('public/images/supplier', $imageName);
+            $image->move('images/supplier', $imageName);
             $input['image'] = $imageName;
         }
 

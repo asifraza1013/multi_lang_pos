@@ -65,7 +65,7 @@
                                         </table>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                {{-- <div class="col-md-6">
                                     <div class="form-group">
                                         <label>{{trans('file.Brand')}}</strong> </label>
                                         <div class="input-group">
@@ -76,7 +76,7 @@
                                           </select>
                                       </div>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>{{trans('file.category')}} *</strong> </label>
@@ -90,22 +90,22 @@
                                       <span class="validation-msg"></span>
                                     </div>
                                 </div>
-                                <div id="unit" class="col-md-12">
+                                <div class="col-md-6 form-group" id="unit">
+                                    <label>{{trans('file.Product Unit')}} *</strong> </label>
+                                    <div class="input-group">
+                                      <select required class="form-control selectpicker" name="unit_id">
+                                        <option value="" disabled selected>Select Product Unit...</option>
+                                        @foreach($lims_unit_list as $unit)
+                                            @if($unit->base_unit==null)
+                                                <option value="{{$unit->id}}">{{$unit->unit_name}}</option>
+                                            @endif
+                                        @endforeach
+                                      </select>
+                                  </div>
+                                  <span class="validation-msg"></span>
+                            </div>
+                                {{-- <div id="unit" class="col-md-12">
                                     <div class="row ">
-                                        <div class="col-md-4 form-group">
-                                                <label>{{trans('file.Product Unit')}} *</strong> </label>
-                                                <div class="input-group">
-                                                  <select required class="form-control selectpicker" name="unit_id">
-                                                    <option value="" disabled selected>Select Product Unit...</option>
-                                                    @foreach($lims_unit_list as $unit)
-                                                        @if($unit->base_unit==null)
-                                                            <option value="{{$unit->id}}">{{$unit->unit_name}}</option>
-                                                        @endif
-                                                    @endforeach
-                                                  </select>
-                                              </div>
-                                              <span class="validation-msg"></span>
-                                        </div>
                                         <div class="col-md-4">
                                                 <label>{{trans('file.Sale Unit')}}</strong> </label>
                                                 <div class="input-group">
@@ -123,7 +123,7 @@
                                                 </div>
                                         </div>                                
                                     </div>                                
-                                </div>
+                                </div> --}}
                                 <div id="cost" class="col-md-6">
                                      <div class="form-group">
                                         <label>{{trans('file.Product Cost')}} *</strong> </label>
@@ -641,7 +641,6 @@
                             url:'{{route('products.store')}}',
                             data: $("#product-form").serialize(),
                             success:function(response){
-                                //console.log(response);
                                 location.href = '../products';
                             },
                             error:function(response) {

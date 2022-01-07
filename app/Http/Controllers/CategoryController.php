@@ -141,7 +141,7 @@ class CategoryController extends Controller
             $ext = pathinfo($image->getClientOriginalName(), PATHINFO_EXTENSION);
             $imageName = date("Ymdhis");
             $imageName = $imageName . '.' . $ext;
-            $image->move('public/images/category', $imageName);
+            $image->move('images/category', $imageName);
             
             $lims_category_data['image'] = $imageName;
         }
@@ -179,7 +179,7 @@ class CategoryController extends Controller
             $ext = pathinfo($image->getClientOriginalName(), PATHINFO_EXTENSION);
             $imageName = date("Ymdhis");
             $imageName = $imageName . '.' . $ext;
-            $image->move('public/images/category', $imageName);
+            $image->move('images/category', $imageName);
             $input['image'] = $imageName;
         }
         $lims_category_data = Category::findOrFail($request->category_id);
@@ -241,7 +241,7 @@ class CategoryController extends Controller
             }
             $lims_category_data = Category::findOrFail($id);
             if($lims_category_data->image)
-                unlink('public/images/category/'.$lims_category_data->image);
+                unlink('images/category/'.$lims_category_data->image);
             $lims_category_data->is_active = false;
             $lims_category_data->save();
         }
@@ -258,7 +258,7 @@ class CategoryController extends Controller
             $product_data->save();
         }
         if($lims_category_data->image)
-            unlink('public/images/category/'.$lims_category_data->image);
+            unlink('images/category/'.$lims_category_data->image);
         $lims_category_data->save();
         return redirect('category')->with('not_permitted', 'Category deleted successfully');
     }

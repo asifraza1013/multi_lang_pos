@@ -32,8 +32,8 @@
                     $warehouse = DB::table('warehouses')->find($stock_count->warehouse_id);
                     $category_name = [];
                     $brand_name = [];
-                    $initial_file = 'public/stock_count/' . $stock_count->initial_file;
-                    $final_file = 'public/stock_count/' . $stock_count->final_file;
+                    $initial_file = 'stock_count/' . $stock_count->initial_file;
+                    $final_file = 'stock_count/' . $stock_count->final_file;
                 ?>
                 <tr>
                     <td>{{$key}}</td>
@@ -78,11 +78,11 @@
                         <td><div class="badge badge-info">{{trans('file.Partial')}}</div></td>
                     @endif
                     <td class="text-center">
-                        <a download href="{{'public/stock_count/'.$stock_count->initial_file}}" title="{{trans('file.Download')}}"><i class="dripicons-copy"></i></a>
+                        <a download href="{{'stock_count/'.$stock_count->initial_file}}" title="{{trans('file.Download')}}"><i class="dripicons-copy"></i></a>
                     </td>
                     <td class="text-center">
                         @if($stock_count->final_file)
-                        <a download href="{{'public/stock_count/'.$stock_count->final_file}}" title="{{trans('file.Download')}}"><i class="dripicons-copy"></i></a>
+                        <a download href="{{'stock_count/'.$stock_count->final_file}}" title="{{trans('file.Download')}}"><i class="dripicons-copy"></i></a>
                         @endif
                     </td>
                     <td>
@@ -317,7 +317,7 @@
           var divToPrint=document.getElementById('stock-count-details');
           var newWin=window.open('','Print-Window');
           newWin.document.open();
-          newWin.document.write('<link rel="stylesheet" href="<?php echo asset('vendor/bootstrap/css/bootstrap.min.css') ?>" type="text/css"><style type="text/css">@media print {.modal-dialog { max-width: 1000px;} }</style><body onload="window.print()">'+divToPrint.innerHTML+'</body>');
+          newWin.document.write('<link rel="stylesheet" href="<?php echo ast_url('vendor/bootstrap/css/bootstrap.min.css') ?>" type="text/css"><style type="text/css">@media print {.modal-dialog { max-width: 1000px;} }</style><body onload="window.print()">'+divToPrint.innerHTML+'</body>');
           newWin.document.close();
           setTimeout(function(){newWin.close();},10);
     });

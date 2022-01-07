@@ -138,7 +138,7 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label> {{trans('file.Sample File')}}</label>
-                    <a href="public/sample_file/sample_customer_group.csv" class="btn btn-info btn-block btn-md"><i class="dripicons-download"></i>  {{trans('file.Download')}}</a>
+                    <a href="sample_file/sample_customer_group.csv" class="btn btn-info btn-block btn-md"><i class="dripicons-download"></i>  {{trans('file.Download')}}</a>
                 </div>
             </div>
       </div>
