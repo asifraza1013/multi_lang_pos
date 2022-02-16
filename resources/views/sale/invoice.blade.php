@@ -224,7 +224,7 @@
 
 <body>
     @if(preg_match('~[0-9]~', url()->previous()))
-    @php $url = '../../pos'; @endphp
+    @php $url = '../../posm'; @endphp
     @else
     @php $url = url()->previous(); @endphp
     @endif
@@ -388,26 +388,26 @@
             <!-- Cart BG -->
             <div class="container mt-3">
                 <div class="row mt-2">
-                    <div class="col-3">
-                        <!-- <img src="{{ast_url('images/cart.jpg')}}" class="img-fluid cart-bg" alt="" style="position: relative; height:auto; bottom:0px"> -->
-                        <img src="{{ast_url('images/all_icon.jpeg')}}" class="img-fluid cart-bg" alt="" style="position: relative; height:auto; bottom:0px">
-                    </div>
-                    <div class="col-2 text-left">
-                        <img src="{{ast_url('images/merge_icon.jpg')}}" class="img-fluid cart-bg" alt="" style="position: relative; width:120px; height:auto; bottom:0px;">
-                    </div>
-                    <div class="col-2 text-left">
-                        <img src="{{ast_url('images/door_icon.jpeg')}}" class="img-fluid cart-bg" alt="" style="position: relative; width:120px; height:auto; bottom:0px;">
-                    </div>
                     <div class="col-2">
-                        <img src="{{ast_url('images/qr_code.jpeg')}}" class="img-fluid cart-bg" alt="" style="position: relative; width:120px; height:auto; bottom:0px;opacity: 0.8;">
+                        <!-- <img src="{{ast_url('images/cart.jpg')}}" class="img-fluid cart-bg" alt="" style="position: relative; height:auto; bottom:0px"> -->
+                        <img src="{{ast_url('images/general_store2.jpeg')}}" class="img-fluid cart-bg" alt="" style="position: relative; height:auto; bottom:0px">
+                    </div>
+                    <!-- <div class="col-2 text-left">
+                        <img src="{{ast_url('images/merge_icon.jpg')}}" class="img-fluid cart-bg" alt="" style="position: relative; width:120px; height:auto; bottom:0px;">
+                    </div> -->
+                    <div class="col-4 text-center">
+                        <img src="{{ast_url('images/general_store_qr.jpeg')}}" class="img-fluid cart-bg" alt="" style="position: relative; width:120px; height:auto; bottom:0px;opacity: 0.8;">
+                    </div>
+                    <div class="col-4">
+                        <img src="{{ast_url('images/general_store1.jpeg')}}" class="img-fluid cart-bg" alt="" style="position: relative; width:120px; height:auto; bottom:0px;">
                     </div>
                 </div>
             </div>
             <footer style="width: 90%;margin:auto;left:35px">
                 <hr>
-                <p class="m-0 text-center">
+                {{-- <p class="m-0 text-center">
                    {{trans('file.Email')}} - {{$lims_warehouse_data->email}}
-                </p>
+                </p> --}}
                 {{-- <div class="social pt-3">
                     <span class="pr-2">
                         <i class="fas fa-mobile-alt"></i>
