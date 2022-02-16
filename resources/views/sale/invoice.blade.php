@@ -256,22 +256,25 @@
                 </div>
             </section>
 
-            <section class="store-user mt-5">
-                <div class="col-10">
+            <section class=" mt-5">
+                <div class="col-12">
                     <div class="row bb pb-3">
-                        <div class="col-7">
+                        <div class="col-6">
+                            <!-- <p>{{trans('file.customer')}},</p>
+                            <h5 class="store-heading">{{$lims_customer_data->name}}</h5>
+                            <p class="address"> {{$lims_customer_data->address}} </p>
+                            <div class="txn mt-2">{{$lims_customer_data->phone_number}}</div> -->
+                            <!-- <p>{{trans('file.Payment Mode')}}: <span>{{trans('file.Quick Cash')}}</span></p> -->
+                            <p>{{trans('file.reference')}}: <span>{{$lims_sale_data->reference_no}}</span></p>
+                            <p>{{trans('file.Date')}}: <span>{{$lims_sale_data->created_at}}</span></p>
+                        </div>
+                        <div class="col-6 text-right store-user" style="border-left: 2px solid #ccc;">
                             <h5 class="store-heading bold">{{$lims_biller_data->company_name}}</h5>
                             <p class="address">{{$lims_warehouse_data->address}} </p>
                             <div class="txn mt-2">{{$lims_warehouse_data->phone}}</div>
                         </div>
-                        <div class="col-5">
-                            <p>{{trans('file.customer')}},</p>
-                            <h5 class="store-heading">{{$lims_customer_data->name}}</h5>
-                            <p class="address"> {{$lims_customer_data->address}} </p>
-                            <div class="txn mt-2">{{$lims_customer_data->phone_number}}</div>
-                        </div>
                     </div>
-                    <div class="row extra-info pt-3">
+                    <!-- <div class="row extra-info pt-3">
                         <div class="col-7">
                             <p>{{trans('file.Payment Mode')}}: <span>{{trans('file.Quick Cash')}}</span></p>
                             <p>{{trans('file.reference')}}: <span>{{$lims_sale_data->reference_no}}</span></p>
@@ -279,7 +282,7 @@
                         <div class="col-5">
                             <p>{{trans('file.Date')}}: <span>{{$lims_sale_data->created_at}}</span></p>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </section>
 
@@ -383,7 +386,7 @@
             </section>
 
             <!-- Cart BG -->
-            <div class="container">
+            <div class="container mt-3">
                 <div class="row mt-2">
                     <div class="col-3">
                         <!-- <img src="{{ast_url('images/cart.jpg')}}" class="img-fluid cart-bg" alt="" style="position: relative; height:auto; bottom:0px"> -->

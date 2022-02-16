@@ -58,7 +58,7 @@
             <form action="{{route('login')}}" method="post">
               @csrf
               <div class="form-group-material">
-                <input id="login-username" type="text" name="name" required class="input-material" value="">
+                <input id="login-username" type="text" name="email" required class="input-material" value="">
                 <label for="login-username" class="label-material">{{trans('file.UserName')}}</label>
                 @if ($errors->has('name'))
                     <p>
