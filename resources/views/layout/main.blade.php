@@ -1179,7 +1179,7 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-sm-12">
-              <p>&copy; {{$general_setting->site_title}} | {{trans('file.Developed')}} {{trans('file.By')}} <a href="https://lion-coders.com" class="external">LionCoders</a></p>
+              <p>&copy; {{$general_setting->site_title}}</p>
             </div>
           </div>
         </div>
